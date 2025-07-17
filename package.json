@@ -27,7 +27,7 @@
 		"typescript": "^5.0.0"
 	},
 	"lint-staged": {
-		"**/*.{ts}": [
+		"**/*.ts": [
 			"bun run lint:fix"
 		]
 	}
