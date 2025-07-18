@@ -1,5 +1,7 @@
+import type { ContentfulStatusCode } from "hono/utils/http-status";
+
 export class AppError extends Error {
-	public readonly code: number;
+	public readonly code: ContentfulStatusCode;
 	public readonly location: string;
 	public readonly cause?: unknown;
 	public readonly stackTrace?: string[];
@@ -7,7 +9,7 @@ export class AppError extends Error {
 
 	constructor(
 		message: string,
-		code: number,
+		code: ContentfulStatusCode,
 		location: string,
 		cause?: unknown,
 		errorStack?: string[],
