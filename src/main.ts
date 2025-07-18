@@ -1,14 +1,17 @@
-import { Hono } from "hono";
+import { OpenAPIHono } from "@hono/zod-openapi";
 
 /**
  * Custom modules
  */
-import apiRoutes from "./routes";
+import apiRoutes from "@/routes";
+import { env } from "@/config";
+import { configureOpenAPI } from "@/config/server-config";
 
-const app = new Hono();
+const app = new OpenAPIHono();
 app.route("/api", apiRoutes);
+configureOpenAPI(app);
 
 export default {
-	port: 3000,
+	port: env.PORT,
 	fetch: app.fetch,
 };
