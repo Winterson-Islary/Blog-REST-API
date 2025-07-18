@@ -1,3 +1,3 @@
-import type { ResponseDTO } from "./response.dto";
+import { type ResponseDTO, createResponseDtoSchema } from "./response.dto";
 
-export type { ResponseDTO };
+export { type ResponseDTO, createResponseDtoSchema };
